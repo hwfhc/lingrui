@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>第一题(2)</title>
+</head>
+<body>
+<div id="container">
+    <div id="left"></div><!--位置不能交换-->
+    <div id="right"></div>
+    <div id="center"></div>
+</div>
+</body>
+
+<style>
+    #container {
+        /*位置设置*/
+        position: relative;
+        margin:auto;
+        /*形状设置*/
+        width: 95%;
+        height: 800px;
+        /*颜色设置*/
+        background-color: #eee;
+
+        overflow: hidden;
+    }
+
+    #center{
+        height: 90%;
+        margin-top: 20px;
+        margin-right: 160px;
+        margin-left: 240px;
+        background: #ffbe93;
+
+    }
+
+    #left{
+        float: left;
+        margin: 20px;
+        background: #a0b3d6;
+        width: 200px;
+        height: 80%;
+    }
+
+    #right{
+        float: right;
+        margin: 20px;
+        background: #a0b3d6;
+        width: 120px;
+        height: 20%;
+    }
+</style>
+
+</html>
