@@ -1,0 +1,307 @@
+@navbar_Height: 50px;
+@picture_Height: 600px;
+@about_Height: 800px;
+@ability_Height: 600px;
+@footer_Height: 400px;
+
+*{
+  box-sizing: border-box;
+}
+
+body{
+  overflow: scroll;/*必须这样做才能激活window滚动*/
+  height: @navbar_Height + @picture_Height + @about_Height + @ability_Height + @footer_Height;
+
+  /*总字体设置*/
+  font-family: 楷体,宋体,微软雅黑,serif;
+  /*形状设置*/
+  width:100%;
+  min-width:800px;
+  /*背景图片*/
+  background-image: url(background.jpg);
+
+  margin:0;/*取消body默认的margin，防止水平滚动条出现*/
+}
+
+#container{
+
+  /*形状设置*/
+  width: 95%;
+  /*位置设置*/
+  position: relative;
+  margin:auto;
+  /*颜色设置*/
+  background-color: red;
+}
+
+#navbar{
+  /*位置设置*/
+  position: fixed;
+  /*形状设置*/
+  min-width:600px;
+  width: 95%;/*position:fixed的元素相对于viewport定位，宽度设为95%与container一致*/
+  height: @navbar_Height;
+  /*颜色设置*/
+  background-color: #22aba4;
+  /*内部元素设置*/
+  display: flex;/*flexbox必须有这个属性*/
+  justify-content: flex-end;
+  z-index: 1;/*防止导航条被遮挡*/
+
+  div{
+    /*位置设置*/
+    position: absolute;
+    top:0;
+    left: 0;
+    /*颜色设置*/
+    color: #8b1c23;
+    /*文本设置*/
+    font-size:2.5em;
+  }
+
+  .item{
+    /*形状设置*/
+    width: 10%;
+    height: 50px;
+    /*位置设置*/
+    margin-left: 2%;
+    /*颜色设置*/
+    background-color: #a5f235;
+    /*文字设置*/
+    text-decoration: none;
+    color: white;
+    padding:15px;
+    text-align: center;
+    font-size: 1.25em;/*默认字体大小为16px*/
+
+    overflow: hidden;/*防止文字溢出*/
+
+    &:hover{
+      animation: 1.5s colorchange forwards;
+    }
+/***************注意下面这个，动画名是colorchange！*******************/
+    @keyframes colorchange{
+       0%{
+         background: #a5f235;
+         box-shadow: none;
+       }
+      100%{
+        background: #d14545;
+        .Shadow(0,0,10px,black);
+      }
+    }
+  }
+}
+
+#picture{
+  /*位置设置*/
+  position: absolute;
+  top:@navbar_Height;
+  /*形状设置*/
+  width: 100%;
+  height: @picture_Height;
+  /*背景设置*/
+  background:none;
+
+  img{
+    height: 100%;
+    width: 75%;
+    min-height: 100%;
+    min-width: 75%;
+    .ImageCenter;
+  }
+}
+
+#about{
+  /*位置设置*/
+  position: absolute;
+  top: @navbar_Height + @picture_Height;
+  /*形状设置*/
+  width: 100%;
+  height:  @about_Height;
+  /*颜色设置*/
+  background-color: #f8fff7;
+  /*内部元素设置*/
+  display: flex;
+  justify-content: space-around;
+
+  .item {
+    /*形状设置*/
+    width: 15%;
+    height: 220px;
+    overflow: hidden;
+    /*位置设置*/
+    margin-top:5%;
+    /*颜色设置*/
+    background-color: #f8fff7;
+
+    &:hover{
+      .Shadow(1px,1px,4px,black,0,0,50px,blue,0,0,10px,darkblue);
+    }
+
+    h3{
+      border-bottom: 2px solid red;
+      text-align: center;/*设置文本居中*/
+    }
+
+    img{
+      height:100px;
+      .ImageCenter;
+    }
+    
+    div{
+      border-left: 6px solid blue;
+      background: #6ab5d2;
+      margin: 0;
+      height: 100%;
+    }
+  }
+}
+
+#ability{
+  /*位置设置*/
+  position: absolute;
+  top: @navbar_Height + @picture_Height + @about_Height;
+  /*形状设置*/
+  width: 100%;
+  height: @ability_Height;
+  /*内部元素设置*/
+  display: flex;
+  align-items: flex-end;
+  /*背景图片*/
+  background-image: url(ability_bg.jpg);
+
+  .item{
+       /*形状设置*/
+       width: 25%;
+       height: 70%;
+       border: 1px #424242 solid;
+       /*位置设置*/
+       /*颜色设置*/
+       background: rgba(31, 31, 31, 0.9);
+
+       img{
+         height:100px;
+         .ImageCenter;
+       }
+
+       h2{
+         color: #0026ff;
+         border-bottom: 3px solid cornflowerblue;
+         text-align: center;
+         margin-top: 50px;
+         margin-bottom: 75px;
+       }
+
+       p{
+         /*文字设置*/
+         color: #f8fff7;
+         margin:10px;
+         text-align: center;
+         font-size: 1.25em;/*设置字体尺寸相对倍数，默认为16px*/
+         text-shadow:0 0 50px red;
+
+         overflow: hidden;/*防止文字溢出*/
+    }
+  }
+}
+
+#footer{
+  /*位置设置*/
+  position: absolute;
+  top: @navbar_Height + @picture_Height + @about_Height + @ability_Height;
+  /*形状设置*/
+  width: 100%;
+  height: @footer_Height;
+  /*颜色设置*/
+  background-color: grey;
+
+  /*内部元素设置*/
+  display: flex;
+  align-items:center;
+
+  .item{
+    margin:auto;
+    font-size: 3em;
+    color: #f0f0f0;
+
+    span{
+      text-decoration: underline;
+    }
+  }
+}
+
+#backtotop {
+  /*形状设置*/
+  width: 150px;
+  height: 50px;
+  border-radius: 100%;
+  /*位置设置*/
+  position: fixed;
+  right: 50px;
+  bottom: 25px;
+  /*颜色设置*/
+  background-color: #000000;
+  /*文字设置*/
+  text-decoration: none;
+  color: white;
+
+  text-align: center;
+  padding: 15px;
+  overflow: hidden; /*防止文字溢出*/
+}
+
+/******************************************模块区********************************************************************/
+
+//盒子阴影
+.Shadow(@x1,@y1,@size1,@color1,@x2:0,@y2:0,@size2:0,@color2:white,@x3:0,@y3:0,@size3:0,@color3:white){
+  /*
+  *效果说明:
+  *为box创建阴影效果
+  *x,y:偏移量
+  *size:阴影大小
+  *color:阴影颜色
+  *可叠加3个shadow
+  */
+  box-shadow: @x1 @y1 @size1 @color1,@x2 @y2 @size2 @color2,@x3 @y3 @size3 @color3;
+}
+
+//图片居中
+.ImageCenter(){
+   /*
+   *效果说明:
+   *将图片居中
+   */
+  display: block;/*将img改为block元素，margin才能正常生效*/
+  margin:auto;
+}
+
+//滑入动画
+@keyframes slidein {
+  0%   {
+    width: 0;
+    opacity: 0;
+  }
+  25%  {
+    width: 100%;
+    opacity: 0.5;
+  }
+  50%  {
+    width: 100%;
+    opacity: 1;
+  }
+  75%{
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.slidein{
+  animation: slidein 2s forwards;
+}
+
+.slide{
+  opacity: 1;
+}
