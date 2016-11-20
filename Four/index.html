@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <title>第四题</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="js.js"></script>
+</head>
+<body>
+<div id="container">
+    <button onclick="Pre_Order()">前序遍历</button>
+    <button onclick="In_Order()">中序遍历</button>
+    <button onclick="Post_Order()">后序遍历</button>
+    <button onclick="Layer()">广度优先遍历</button>
+</div>
+    <canvas id="cvs" width="1500px" height="1600px">你的浏览器不支持canvas</canvas><!--这货是个元素。。。会占地方-->
+
+    <div id="root">
+    </div>
+</body>
+<script>
+    init();
+</script>
+</html>
