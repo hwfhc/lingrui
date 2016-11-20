@@ -1,0 +1,58 @@
+html,body{
+    height: 100%;
+    margin:0;
+}
+
+body{
+    /*总字体设置*/
+    font-family: 楷体,宋体,微软雅黑,serif;
+    /*形状设置*/
+    background: url(background.jpg);
+    /*位置设置*/
+    position: relative;
+}
+
+#container{
+    /*位置设置*/
+    position: absolute;
+    top:10px;
+    left:75px;
+    /*形状设置*/
+    width: 800px;
+    /*颜色设置*/
+    background: none;
+}
+
+button{
+    /*文本设置*/
+    font-size:1.25em;
+    color: white;
+    /*形状设置*/
+    border:5px solid blue;
+    /*位置设置*/
+    margin-left: -10px;/*button似乎有最小margin*/
+    width: 150px;
+    height:75px;
+    /*颜色设置*/
+    background: #8a6eff;
+}
+
+button:hover{
+    background: #000067;
+}
+
+div{
+    /*位置设置*/
+    position: absolute;/*使每个节点位置相对于整个视图*/
+    /*形状设置*/
+    border-radius: 100%;
+    width:50px;
+    height:50px;
+    background: #00ff00;
+}
+
+#root{
+    position: absolute;
+    top: 100px;
+    left:600px;;
+}
