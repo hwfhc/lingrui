@@ -125,19 +125,25 @@ body {
   background-color: #f8fff7;
   /*内部元素设置*/
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
 }
-#about .item {
+#about .part {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  /*第一部分的item样式*/
+  /*第二部分的item样式*/
+}
+#about .part .item {
   /*形状设置*/
   width: 15%;
   height: 220px;
   overflow: hidden;
   /*位置设置*/
   margin-top: 5%;
-  /*颜色设置*/
-  background-color: #f8fff7;
 }
-#about .item:hover {
+#about .part .item:hover {
   /*
   *效果说明:
   *为box创建阴影效果
@@ -148,12 +154,12 @@ body {
   */
   box-shadow: 1px 1px 4px black, 0 0 50px blue, 0 0 10px darkblue;
 }
-#about .item h3 {
+#about .part .item h3 {
   border-bottom: 2px solid red;
   text-align: center;
   /*设置文本居中*/
 }
-#about .item img {
+#about .part .item img {
   height: 100px;
   /*
    *效果说明:
@@ -163,11 +169,70 @@ body {
   /*将img改为block元素，margin才能正常生效*/
   margin: auto;
 }
-#about .item div {
+#about .part .item div {
   border-left: 6px solid blue;
   background: #6ab5d2;
   margin: 0;
   height: 100%;
+}
+#about .part .item_special {
+  /*布局设置*/
+  display: flex;
+  flex-direction: row;
+  /*形状设置*/
+  width: 60%;
+  height: 400px;
+  overflow: hidden;
+  /*左半部分item*/
+  /*右半部分item*/
+}
+#about .part .item_special:hover {
+  /*
+  *效果说明:
+  *为box创建阴影效果
+  *x,y:偏移量
+  *size:阴影大小
+  *color:阴影颜色
+  *可叠加3个shadow
+  */
+  box-shadow: 1px 1px 4px green, 0 0 50px black, 0 0 10px darkblue;
+}
+#about .part .item_special div:nth-of-type(1) {
+  /*布局设置*/
+  display: flex;
+  flex-direction: column;
+  /*形状设置*/
+  margin: 0;
+  height: 100%;
+  width: 60%;
+}
+#about .part .item_special div:nth-of-type(1) h3 {
+  border-bottom: 2px solid red;
+  text-align: center;
+  /*设置文本居中*/
+}
+#about .part .item_special div:nth-of-type(1) img {
+  height: 200px;
+  /*
+   *效果说明:
+   *将图片居中
+   */
+  display: block;
+  /*将img改为block元素，margin才能正常生效*/
+  margin: auto;
+}
+#about .part .item_special div:nth-of-type(2) {
+  /*形状设置*/
+  width: 40%;
+  margin: 0;
+  height: 100%;
+  /*颜色设置*/
+  border-left: 6px solid blue;
+  background: #6ab5d2;
+  /*文本设置*/
+  padding-top: 15%;
+  font-size: 2em;
+  text-align: center;
 }
 #ability {
   /*位置设置*/
@@ -258,6 +323,31 @@ body {
   padding: 15px;
   overflow: hidden;
   /*防止文字溢出*/
+}
+#backtotop:hover {
+  border: 1px solid black;
+  /*
+  *效果说明:
+  *为box创建阴影效果
+  *x,y:偏移量
+  *size:阴影大小
+  *color:阴影颜色
+  *可叠加3个shadow
+  */
+  box-shadow: 1px 1px 10px black, 0 0 0 white, 0 0 0 white;
+}
+#backtotop:active {
+  background-color: #0d0d0d;
+  border: 1px solid black;
+  /*
+  *效果说明:
+  *为box创建阴影效果
+  *x,y:偏移量
+  *size:阴影大小
+  *color:阴影颜色
+  *可叠加3个shadow
+  */
+  box-shadow: 1px 1px 10px black, 0 0 0 white, 0 0 0 white;
 }
 /******************************************模块区********************************************************************/
 @keyframes slidein {
